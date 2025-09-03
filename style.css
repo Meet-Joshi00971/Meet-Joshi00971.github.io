@@ -1,38 +1,59 @@
-/* General Body & Link Styles */
+/* --- Global Styles & Theme --- */
+#logo {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #111;
+    color: #eee;
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 a {
-    color: #bb86fc;
+    color: #00c3ff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 a:hover {
-    color: #3700b3;
+    color: #ff00c1;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+h1, h2, h3 {
+    font-weight: 700;
 }
 
-/* Header */
-.site-header {
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 100;
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-bg {
+    background-color: #1e1e1e;
+    padding: 60px 0;
+}
+
+main section {
+    padding: 60px 0;
+}
+
+/* --- Header & Footer --- */
+.site-header, .site-footer {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
 }
 
 .site-header .container {
@@ -42,91 +63,89 @@ a:hover {
 }
 
 .site-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.8em;
     margin: 0;
+}
+.site-title a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .site-header nav a {
-    margin-left: 1.5rem;
-    font-weight: 400;
+    color: #eee;
+    margin: 0 15px;
+    font-size: 1.1em;
 }
 
-/* Main Content */
-main {
-    padding-top: 80px; /* Offset for fixed header */
+.site-footer p {
+    margin: 5px 0;
 }
 
-/* --- REVISED HERO SECTION STYLES --- */
-
+/* --- UPDATED Hero Section --- */
 #hero {
-    position: relative; /* Establishes a positioning context for children */
-    overflow: hidden;   /* Prevents horizontal scrollbars from the oversized model */
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    min-height: 90vh;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .hero-text {
-    flex: 0 0 50%; /* Occupy the left 50% of the space */
-    max-width: 50%;
-    z-index: 2;    /* Ensure text appears on top of the 3D model */
+    flex: 1;
+    text-align: left;
 }
 
 .hero-text h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    color: #a0a0a0;
-    margin-bottom: 2rem;
+.hero-text .subtitle {
+    font-size: 1.5em;
+    color: #aaa;
+    margin-bottom: 30px;
 }
 
 .hero-3d {
-    position: absolute; /* Take the container out of the normal document flow */
-    top: 50%;
-    right: -5%; /* Adjusted positioning */
-    width: 55%;  /* Adjusted size to feel more like the original */
-    height: 90%; /* Adjusted height */
-    transform: translateY(-50%); /* Vertically center it */
-    z-index: 1; /* Place it behind the text */
+    flex: 1;
+    min-height: 400px;
+    height: 50vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #1a1a1a;
 }
 
-spline-viewer {
-    width: 100%;
-    height: 100%;
-    /* We don't need transforms here anymore, the parent .hero-3d handles it */
+.hero-3d iframe {
+    border: none;
 }
 
-/* General Sections */
-.section-bg {
-    background-color: #1e1e1e;
-    padding: 4rem 0;
-}
 
-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-/* Skills Section */
+/* --- Skills Section --- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 30px;
+    text-align: left;
+}
+
+.skill-category {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #00c3ff;
 }
 
 .skill-category h3 {
-    color: #bb86fc;
-    border-bottom: 2px solid #3700b3;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
 }
 
 .skill-category ul {
@@ -134,64 +153,88 @@ section h2 {
     padding: 0;
 }
 
-.skill-category li {
-    background: #2c2c2c;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
+.skill-category ul li {
+    margin-bottom: 10px;
 }
 
-/* Projects Section */
+
+/* --- Projects Section --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 30px;
 }
 
 .project-card {
-    background: #2c2c2c;
-    padding: 2rem;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
 .project-card h3 {
-    margin-top: 0;
+    font-size: 1.5em;
 }
 
 .learn-more-button {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00c3ff;
+    color: #111;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    background: #1e1e1e;
+.learn-more-button:hover {
+    background-color: #ff00c1;
+    color: #fff;
 }
 
-/* Crazy Button Animation */
+
+/* --- Project Detail Pages --- */
+.project-detail {
+    padding: 60px 0;
+}
+.project-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.project-detail h3 {
+    margin-top: 40px;
+    font-size: 1.8em;
+}
+.project-detail ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+
+/* --- The Crazy Button Animation --- */
 .crazy-button {
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 20px 40px;
     border-radius: 15px;
     border: 3px solid white;
     position: relative;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    animation: pulse-glow 2s infinite ease-in-out, move-gradient 4s infinite linear;
+
+    animation: 
+        pulse-glow 2s infinite ease-in-out, 
+        move-gradient 4s infinite linear;
+
     background: linear-gradient(135deg, #ff00c1, #ff9a00, #00c3ff, #8a2be2, #ff00c1);
     background-size: 400% 400%;
 }
@@ -202,53 +245,44 @@ section h2 {
 }
 
 @keyframes pulse-glow {
-    0% { box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5); }
-    50% { box-shadow: 0 0 40px 10px rgba(0, 195, 255, 0.5); }
-    100% { box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5); }
+    0% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 10px rgba(0, 195, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
 }
 
 @keyframes move-gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 992px) {
-    .hero-3d {
-        right: -15%; /* Adjust for tablet sizes */
-        width: 65%;
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-@media (max-width: 768px) {
-    .site-header nav {
-        display: none; /* Simple responsive menu, can be improved with JS */
-    }
-
-    #hero {
-        overflow: visible; /* Reset for stacking layout */
-    }
-
+/* --- Responsive Design for Hero Section --- */
+@media (max-width: 800px) {
     .hero-container {
         flex-direction: column;
         text-align: center;
     }
-
-    .hero-text, .hero-text {
-        flex: 1;
-        max-width: 100%;
-        margin-bottom: 2rem;
+    .hero-text {
+        text-align: center;
     }
-
-    /* Reset the 3D model's position for mobile */
+    .hero-text h2 {
+        text-align: center;
+    }
     .hero-3d {
-        position: static; /* Put it back into the page flow */
-        transform: none;  /* Remove centering and positioning */
         width: 100%;
+        max-width: 400px;
         height: 400px;
-        right: auto;
-        top: auto;
     }
 }
-
