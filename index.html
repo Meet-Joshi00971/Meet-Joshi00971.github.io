@@ -1,6 +1,72 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #111;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-<button style="background-color: black; color: white;" 
-        onclick="window.location.href='https://play.unity.com/en/games/4ec0124a-ca9c-4c14-bcf3-ea3d11b7a157/meet-joshis-portfolio';">
-    Click Me
-</button>
+.crazy-button {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 3px solid white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    animation: 
+        pulse-glow 2s infinite ease-in-out, 
+        move-gradient 4s infinite linear;
+
+    background: linear-gradient(135deg, #ff00c1, #ff9a00, #00c3ff, #8a2be2, #ff00c1);
+    background-size: 400% 400%;
+}
+
+.crazy-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px 10px rgba(255, 105, 180, 0.7); /* Brighter glow on hover */
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 10px rgba(0, 195, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
+}
+
+@keyframes move-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+</style>
+</head>
+<body>
+
+    <h1 style="color: white"><b>Hello</b></h1>
+    <a class="crazy-button" href="https://play.unity.com/en/games/4ec0124a-ca9c-4c14-bcf3-ea3d11b7a157/meet-joshis-portfolio">
+        Click Me
+    </a>
+
+</body>
+</html>
