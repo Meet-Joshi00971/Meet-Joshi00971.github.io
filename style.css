@@ -76,22 +76,51 @@ main section {
     margin: 5px 0;
 }
 
-/* --- Hero Section --- */
+/* --- UPDATED Hero Section --- */
 #hero {
-    text-align: center;
-    padding: 100px 0;
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
-#hero h2 {
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h2 {
+    text-align: left;
     font-size: 3em;
     margin-bottom: 10px;
 }
 
-#hero .subtitle {
+.hero-text .subtitle {
     font-size: 1.5em;
     color: #aaa;
     margin-bottom: 30px;
 }
+
+.hero-3d {
+    flex: 1;
+    min-height: 400px;
+    height: 50vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.hero-3d iframe {
+    border: none;
+}
+
 
 /* --- Skills Section --- */
 .skills-grid {
@@ -233,3 +262,23 @@ main section {
         background-position: 0% 50%;
     }
 }
+
+/* --- Responsive Design for Hero Section --- */
+@media (max-width: 800px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero-text h2 {
+        text-align: center;
+    }
+    .hero-3d {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+}
+
