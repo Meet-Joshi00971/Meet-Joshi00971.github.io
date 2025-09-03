@@ -24,7 +24,6 @@
     </header>
 
     <main>
-        <!-- HERO SECTION WITH CORRECTED SPLINE EMBED -->
         <section id="hero">
             <div class="container hero-container">
                 <div class="hero-text">
@@ -33,8 +32,7 @@
                     <a class="crazy-button" href="#projects">View My Work</a>
                 </div>
                 <div class="hero-3d">
-                    <!-- Added logo="false" to remove the Spline branding -->
-                    <spline-viewer logo="false" url="https://prod.spline.design/zRhO4PUtre5xbeeE/scene.splinecode"></spline-viewer>
+                    <spline-viewer url="https://prod.spline.design/zRhO4PUtre5xbeeE/scene.splinecode"></spline-viewer>
                 </div>
             </div>
         </section>
@@ -119,6 +117,28 @@
             <p>&copy; 2024 Meet Joshi. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- NEW SCRIPT to hide the Spline logo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const splineViewer = document.querySelector('spline-viewer');
+
+            // Wait for the viewer to load the scene
+            splineViewer.addEventListener('load', () => {
+                // Access the shadow DOM
+                const shadow = splineViewer.shadowRoot;
+
+                if (shadow) {
+                    // Find the logo element inside the shadow DOM
+                    const logo = shadow.querySelector('#logo');
+                    if (logo) {
+                        // Hide it
+                        logo.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
