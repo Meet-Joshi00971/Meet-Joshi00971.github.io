@@ -1,4 +1,9 @@
 /* --- Global Styles & Theme --- */
+#logo {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 body {
     background-color: #111;
     color: #eee;
