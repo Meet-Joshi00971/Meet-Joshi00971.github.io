@@ -118,25 +118,28 @@
         </div>
     </footer>
 
-    <!-- NEW SCRIPT to hide the Spline logo -->
+    <!-- UPDATED SCRIPT to hide the Spline logo -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const splineViewer = document.querySelector('spline-viewer');
-
-            // Wait for the viewer to load the scene
-            splineViewer.addEventListener('load', () => {
-                // Access the shadow DOM
-                const shadow = splineViewer.shadowRoot;
-
-                if (shadow) {
-                    // Find the logo element inside the shadow DOM
+            
+            // The Spline viewer takes a moment to initialize and create its shadow DOM.
+            // We'll use an interval to periodically check until the logo is found.
+            const hideLogoInterval = setInterval(() => {
+                if (splineViewer && splineViewer.shadowRoot) {
+                    const shadow = splineViewer.shadowRoot;
                     const logo = shadow.querySelector('#logo');
+                    
                     if (logo) {
-                        // Hide it
+                        // Logo found, hide it and stop checking.
                         logo.style.display = 'none';
+                        clearInterval(hideLogoInterval);
                     }
                 }
-            });
+            }, 100); // Check every 100ms
+
+            // As a safeguard, stop checking after 10 seconds to prevent an infinite loop
+            setTimeout(() => clearInterval(hideLogoInterval), 10000);
         });
     </script>
 
