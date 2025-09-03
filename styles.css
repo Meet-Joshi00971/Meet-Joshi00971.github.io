@@ -1,0 +1,235 @@
+/* --- Global Styles & Theme --- */
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #00c3ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff00c1;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-bg {
+    background-color: #1e1e1e;
+    padding: 60px 0;
+}
+
+main section {
+    padding: 60px 0;
+}
+
+/* --- Header & Footer --- */
+.site-header, .site-footer {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.8em;
+    margin: 0;
+}
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-header nav a {
+    color: #eee;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+/* --- Hero Section --- */
+#hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#hero .subtitle {
+    font-size: 1.5em;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.skill-category {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #00c3ff;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    margin-bottom: 10px;
+}
+
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+}
+
+.learn-more-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00c3ff;
+    color: #111;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.learn-more-button:hover {
+    background-color: #ff00c1;
+    color: #fff;
+}
+
+
+/* --- Project Detail Pages --- */
+.project-detail {
+    padding: 60px 0;
+}
+.project-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.project-detail h3 {
+    margin-top: 40px;
+    font-size: 1.8em;
+}
+.project-detail ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+
+/* --- The Crazy Button Animation --- */
+.crazy-button {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 3px solid white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    animation: 
+        pulse-glow 2s infinite ease-in-out, 
+        move-gradient 4s infinite linear;
+
+    background: linear-gradient(135deg, #ff00c1, #ff9a00, #00c3ff, #8a2be2, #ff00c1);
+    background-size: 400% 400%;
+}
+
+.crazy-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px 10px rgba(255, 105, 180, 0.7);
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 10px rgba(0, 195, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
+    }
+}
+
+@keyframes move-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
