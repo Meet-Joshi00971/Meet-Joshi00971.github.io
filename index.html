@@ -1,4 +1,7 @@
-<script>import express from "express";
+<script>
+function serverStart() {
+    alert("Server is starting!");
+    import express from "express";
 import axios from "axios";
 import { appendToSheet, readSheet } from "./google-sheets-api.js";
 
@@ -228,7 +231,10 @@ async function startServer() {
     process.exit(1);
   }
 }
+  startServer();
+  }
+
 </script>
 <h1>Hello</h1>
 
-<button onclick="startServer()">Click Me</button>
+<button onclick="serverStart()">Click Me</button>
