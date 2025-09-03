@@ -6,6 +6,8 @@
     <title>Meet Joshi - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.53/build/spline-viewer.js"></script>
 </head>
 <body>
 
@@ -22,7 +24,7 @@
     </header>
 
     <main>
-        <!-- UPDATED HERO SECTION -->
+        <!-- HERO SECTION WITH CORRECTED SPLINE EMBED -->
         <section id="hero">
             <div class="container hero-container">
                 <div class="hero-text">
@@ -31,8 +33,8 @@
                     <a class="crazy-button" href="#projects">View My Work</a>
                 </div>
                 <div class="hero-3d">
-                    <!-- Spline 3D Model Embed -->
-                    <iframe src='https://app.spline.design/community/file/3cebd72b-1cb3-4131-864a-a8a9f3d8a3e2' frameborder='0' width='100%' height='100%'></iframe>
+                    <!-- Replaced the iframe with the modern Spline Viewer element -->
+                    <spline-viewer url="https://prod.spline.design/zRhO4PUtre5xbeeE/scene.splinecode"></spline-viewer>
                 </div>
             </div>
         </section>
@@ -120,4 +122,5 @@
 
 </body>
 </html>
+
 
