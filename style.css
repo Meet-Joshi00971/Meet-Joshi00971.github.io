@@ -90,9 +90,9 @@ main {
 .hero-3d {
     position: absolute; /* Take the container out of the normal document flow */
     top: 50%;
-    right: -15%; /* Position it partially off-screen to the right */
-    width: 65%;  /* Make it larger than its original column */
-    height: 100%;
+    right: -5%; /* Adjusted positioning */
+    width: 55%;  /* Adjusted size to feel more like the original */
+    height: 90%; /* Adjusted height */
     transform: translateY(-50%); /* Vertically center it */
     z-index: 1; /* Place it behind the text */
 }
@@ -216,8 +216,8 @@ section h2 {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 992px) {
     .hero-3d {
-        right: -25%; /* Adjust for tablet sizes */
-        width: 75%;
+        right: -15%; /* Adjust for tablet sizes */
+        width: 65%;
     }
 }
 
