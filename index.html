@@ -1,72 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {
-    background-color: #111;
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.crazy-button {
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    padding: 20px 40px;
-    border-radius: 15px;
-    border: 3px solid white;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    animation: 
-        pulse-glow 2s infinite ease-in-out, 
-        move-gradient 4s infinite linear;
-
-    background: linear-gradient(135deg, #ff00c1, #ff9a00, #00c3ff, #8a2be2, #ff00c1);
-    background-size: 400% 400%;
-}
-
-.crazy-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 60px 10px rgba(255, 105, 180, 0.7); /* Brighter glow on hover */
-}
-
-@keyframes pulse-glow {
-    0% {
-        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 40px 10px rgba(0, 195, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 10px 0px rgba(255, 105, 180, 0.5);
-    }
-}
-
-@keyframes move-gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Joshi - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1 style="color: white"><b>Hello</b></h1>
-    <a class="crazy-button" href="https://play.unity.com/en/games/4ec0124a-ca9c-4c14-bcf3-ea3d11b7a157/meet-joshis-portfolio">
-        Click Me
-    </a>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Meet Joshi</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Computer Science & Design Student</h2>
+                <p class="subtitle">XR Developer | Web Developer | Tech Enthusiast</p>
+                <a class="crazy-button" href="#projects">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="section-bg">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I am a passionate and driven Computer Science and Design student at A. D. Patel Institute of Technology. With a strong foundation in Data Structures, Algorithms, and Web Development, I am particularly fascinated by the potential of Extended Reality (XR). I am currently leading an unofficial XR Development team at my college, where I explore immersive technologies. I thrive in collaborative environments and enjoy bringing creative and technical ideas to life.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>C / C++ / C#</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML & CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Stacks</h3>
+                        <ul>
+                            <li>Django</li>
+                            <li>MERN Stack</li>
+                            <li>Three.js</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul>
+                            <li>Unity & Blender</li>
+                            <li>Git & GitHub</li>
+                            <li>Figma & Asana</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-bg">
+            <div class="container">
+                <h2>Personal Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Database GUI Application</h3>
+                        <p>A desktop application for easy database manipulation, built with Python and MySQL.</p>
+                        <a href="project1.html" class="learn-more-button">Learn More</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Immersive VR Art Gallery</h3>
+                        <p>A virtual reality tour of a digital art gallery, designed to be an immersive and interactive experience using Unity.</p>
+                        <a href="project2.html" class="learn-more-button">Learn More</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>3D Portfolio Website</h3>
+                        <p>An innovative and interactive 3D portfolio website (currently in development) using the MERN stack and Three.js.</p>
+                        <a href="project3.html" class="learn-more-button">Learn More</a>
+                    </div>
+                     <div class="project-card">
+                        <h3>Western Opticals Website</h3>
+                        <p>A professional brochure website designed and created for a local business, Western Opticals, in Anand.</p>
+                        <a href="project4.html" class="learn-more-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <p>Get in touch!</p>
+            <p><strong>Email:</strong> <a href="mailto:meetj334@gmail.com">meetj334@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Meet-Joshi00971" target="_blank">Meet-Joshi00971</a></p>
+            <p>&copy; 2024 Meet Joshi. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
